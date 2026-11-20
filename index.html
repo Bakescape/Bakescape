@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakescape – Cakes, Cupcakes & Healthy Bakes in Katihar</title>
+<meta name="description" content="Bakescape: a little sweetness, a little escape, a happier you. Custom cakes, cupcakes, pastries, cookies & healthy bakes in Katihar. Order online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--beige:#feeedf;--cream:#fff8f0;--pink:#f4c2c2;--blush:#fbe1dc;--rose:#e8a0a8;--brown:#5a2d17;--mocha:#8a5a3c;--gold:#b8895a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;background:var(--beige);color:var(--brown);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+section{padding:64px 0}
+.title{text-align:center;margin-bottom:34px}
+.title h2{font-size:2rem}.title p{color:var(--mocha);font-style:italic}
+.title:after{content:"♡";display:block;color:var(--rose);margin-top:6px}
+.btn{display:inline-block;background:var(--brown);color:var(--beige);padding:11px 26px;border-radius:40px;border:0;font:500 .95rem Poppins;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--mocha);transform:translateY(-2px)}
+.btn.alt{background:var(--pink);color:var(--brown)}
+header{position:sticky;top:0;z-index:20;background:rgba(254,238,223,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--pink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font:700 1.5rem 'Playfair Display',serif;letter-spacing:2px}
+.brand span{color:var(--rose)}
+nav a{margin-left:18px;font-size:.9rem}nav a:hover{color:var(--rose)}
+.cartbtn{position:relative;background:var(--brown);color:var(--beige);border:0;border-radius:40px;padding:8px 16px;font:500 .9rem Poppins;cursor:pointer}
+.cartbtn b{background:var(--rose);border-radius:50%;padding:1px 7px;margin-left:4px;font-size:.8rem}
+@media(max-width:760px){nav{display:none}}
+.hero{text-align:center;padding:30px 0 50px}
+.hero img{width:min(760px,100%);border-radius:20px;mix-blend-mode:multiply}
+.hero p{max-width:600px;margin:6px auto 22px;color:var(--mocha)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.chip{background:var(--blush);padding:5px 14px;border-radius:30px;font-size:.82rem}
+.about{background:var(--blush);text-align:center}
+.about p{max-width:700px;margin:10px auto;font-size:1.05rem}
+.about .q{font:italic 1.4rem 'Playfair Display',serif;color:var(--mocha)}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.tab{background:#fff;border:1px solid var(--pink);color:var(--brown);padding:7px 18px;border-radius:30px;cursor:pointer;font:400 .88rem Poppins}
+.tab.on{background:var(--brown);color:var(--beige);border-color:var(--brown)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:22px}
+.card{background:var(--cream);border:1px solid var(--pink);border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(90,45,23,.07);transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px)}
+.pic{height:140px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,var(--pink),var(--blush));position:relative}
+.pic img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.tag{position:absolute;top:10px;left:10px;background:var(--brown);color:var(--beige);font-size:.7rem;padding:2px 10px;border-radius:20px;z-index:1}
+.cb{padding:16px;display:flex;flex-direction:column;flex:1}
+.cb h3{font-size:1.1rem}.cb p{font-size:.82rem;color:var(--mocha);flex:1;margin:4px 0 10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-weight:600}.price small{font-weight:300;color:var(--mocha)}
+.add{background:var(--pink);border:0;border-radius:30px;padding:7px 16px;color:var(--brown);font:500 .85rem Poppins;cursor:pointer}
+.add:hover{background:var(--rose)}
+.note{text-align:center;font-size:.8rem;color:var(--mocha);margin-top:18px}
+.how{background:var(--blush)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.step{background:var(--cream);border-radius:18px;padding:22px;text-align:center;border:1px solid var(--pink)}
+.step i{font-style:normal;font-size:2rem;display:block}
+.step h3{font-size:1.05rem;margin:6px 0}.step p{font-size:.85rem;color:var(--mocha)}
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.pk{aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,var(--pink),var(--blush));display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;position:relative;border:1px solid var(--pink);padding:12px;font-size:.85rem;color:var(--mocha)}
+.pk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.r{background:var(--cream);border:1px solid var(--pink);border-radius:20px;padding:24px;position:relative}
+.r:before{content:"“";font:4rem 'Playfair Display';color:var(--pink);position:absolute;top:-4px;left:16px}
+.r p{margin-top:20px;font-size:.9rem}
+.r b{display:block;margin-top:12px;font-family:'Playfair Display';color:var(--mocha)}
+.r small{color:var(--gold)}
+.biz{background:var(--brown);color:var(--beige);text-align:center}
+.biz p{max-width:680px;margin:10px auto 22px;opacity:.9}
+.biz .btn{background:var(--pink);color:var(--brown)}
+footer{text-align:center;padding:34px 20px;font-size:.85rem;background:var(--blush)}
+footer .brand{display:block;margin-bottom:6px}
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:12px 18px;font-weight:500;font-size:.9rem;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.ov{position:fixed;inset:0;background:rgba(60,30,15,.45);display:none;z-index:40}
+.ov.on{display:block}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(430px,100%);background:var(--beige);z-index:50;transform:translateX(100%);transition:.3s;overflow-y:auto;padding:20px}
+.drawer.on{transform:none}
+.drawer h2{margin-bottom:12px}
+.x{float:right;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--brown)}
+.it{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed var(--pink);font-size:.9rem;gap:8px}
+.qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--rose);background:#fff;cursor:pointer;color:var(--brown)}
+.qty span{margin:0 7px}
+.tot{display:flex;justify-content:space-between;font-weight:600;margin:14px 0;font-size:1.05rem}
+label{display:block;font-size:.8rem;margin:10px 0 3px;font-weight:500}
+input,select,textarea{width:100%;padding:9px 12px;border:1px solid var(--pink);border-radius:12px;background:#fff;font:400 .9rem Poppins;color:var(--brown)}
+.mini{font-size:.76rem;color:var(--mocha);margin-top:4px}
+.empty{text-align:center;color:var(--mocha);padding:20px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <a href="#top" class="brand">BAKE<span>SCAPE</span></a>
+  <nav><a href="#about">About</a><a href="#menu">Menu</a><a href="#how">How to Order</a><a href="#reviews">Reviews</a><a href="#bulk">Bulk Orders</a></nav>
+  <button class="cartbtn" onclick="openCart()">🛍 Cart <b id="cc">0</b></button>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <img src="assets/logo.jpg" alt="Bakescape – A little sweetness, a little escape, a happier you">
+  <p>Freshly baked cakes, cupcakes, pastries & healthy bakes, made with love and delivered to your door in Katihar.</p>
+  <div class="chips"><span class="chip">🎂 Custom cakes in 36 hrs</span><span class="chip">📸 Photo cakes</span><span class="chip">🌾 Healthy atta, ghee & jaggery bakes</span><span class="chip">🚚 Delivery & pickup in Katihar</span></div>
+  <a href="#menu" class="btn">Order Now</a>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <div class="title"><h2>Why “Bakescape”?</h2></div>
+  <p class="q">Escape your everyday stress and time a little happiness through baked treats.</p>
+  <p>Every Bakescape bake is made fresh, with care, to turn an ordinary day into a small celebration. A little sweetness, a little escape, a happier you.</p>
+</div></section>
+
+<section id="menu"><div class="wrap">
+  <div class="title"><h2>Our Menu</h2><p>Prices shown are starting prices. Final price depends on weight, design & customisation.</p></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+  <p class="note">📸 Want a photo cake or a special design? Add details in the order form – customisation is available at extra charge.</p>
+</div></section>
+
+<section class="how" id="how"><div class="wrap">
+  <div class="title"><h2>How to Order</h2></div>
+  <div class="steps">
+    <div class="step"><i>🍰</i><h3>1. Pick your treats</h3><p>Add items to the cart and tell us your design ideas.</p></div>
+    <div class="step"><i>📝</i><h3>2. Fill the details</h3><p>Name, address, date & time. Pre-order cakes at least 36 hours ahead.</p></div>
+    <div class="step"><i>💬</i><h3>3. Confirm on WhatsApp</h3><p>Your order opens in WhatsApp. We confirm the price and delivery charge.</p></div>
+    <div class="step"><i>🚚</i><h3>4. Delivered fresh</h3><p>Pick up yourself or get home delivery anywhere in Katihar (delivery charge extra).</p></div>
+  </div>
+  <p class="note">We are a home-delivery bakery. There is no sit-in café, so every order is packed to arrive beautiful.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="title"><h2>Packed with Love</h2><p>Every cake travels in our signature packaging</p></div>
+  <div class="pack">
+    <div class="pk"><img src="assets/pack1.jpg" alt="" onerror="this.remove()">📦 Add pack1.jpg</div>
+    <div class="pk"><img src="assets/pack2.jpg" alt="" onerror="this.remove()">🎀 Add pack2.jpg</div>
+    <div class="pk"><img src="assets/pack3.jpg" alt="" onerror="this.remove()">🎂 Add pack3.jpg</div>
+  </div>
+</div></section>
+
+<section id="reviews" class="how"><div class="wrap">
+  <div class="title"><h2>Sweet Words</h2><p>What our customers say</p></div>
+  <div class="rev">
+    <div class="r"><small>★★★★★ Best taste & decoration</small><p>The cake tasted amazing and the decoration was even prettier than I imagined. Everyone at the party asked where it came from!</p><b>Shivani Bharti</b></div>
+    <div class="r"><small>★★★★★ Best taste & decoration</small><p>Soft, fresh and not too sweet, with a beautiful finish. Bakescape made our celebration extra special.</p><b>Maya Kumari</b></div>
+    <div class="r"><small>★★★★★ Best customised cake</small><p>I shared my idea and they turned it into exactly the cake I wanted, delivered on time and perfectly packed.</p><b>Priti Kumari</b></div>
+    <div class="r"><small>★★★★★ Best healthy cookies</small><p>Finally healthy cookies that actually taste great! Made with atta, ghee and jaggery, and I feel good eating them.</p><b>Raj Raghav</b></div>
+  </div>
+</div></section>
+
+<section class="biz" id="bulk"><div class="wrap">
+  <h2>Hotels, Schools & Corporates</h2>
+  <p>Birthdays, staff celebrations, events, festive gifting or regular bakery supply, we take bulk and B2B orders with custom branding and dessert boxes.</p>
+  <a class="btn" id="bulkBtn" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+</div></section>
+
+<footer>
+  <span class="brand">BAKE<span style="color:var(--rose)">SCAPE</span></span>
+  <i>A little sweetness, a little escape, a happier you.</i><br>
+  Baked with love, served with happiness ♥<br>
+  📍 Katihar, Bihar · Home delivery & pickup · <a id="footWa" target="_blank" rel="noopener" style="text-decoration:underline">WhatsApp us</a>
+  <br><small>© <span id="yr"></span> Bakescape</small>
+</footer>
+
+<a class="wa" id="waFloat" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+
+<div class="ov" id="ov" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <button class="x" onclick="closeCart()">×</button>
+  <h2>Your Cart</h2>
+  <div id="items"></div>
+  <div id="form" style="display:none">
+    <div class="tot"><span>Items total</span><span id="total">₹0</span></div>
+    <p class="mini">Delivery charge & customisation charge (if any) will be confirmed on WhatsApp.</p>
+    <label>Your name *</label><input id="fn" placeholder="Full name">
+    <label>Phone number *</label><input id="fp" type="tel" placeholder="10-digit mobile number">
+    <label>Pickup or delivery *</label>
+    <select id="fm"><option>Home delivery (Katihar)</option><option>Self pickup</option></select>
+    <label>Delivery address</label><textarea id="fa" rows="2" placeholder="House no., area, landmark"></textarea>
+    <label>Date & time needed *</label><input id="fd" type="datetime-local">
+    <p class="mini" id="dmin"></p>
+    <label>Message on cake / design ideas</label><textarea id="fc" rows="2" placeholder="e.g. Happy Birthday Riya, pink theme. Photo cake? Send the photo on WhatsApp."></textarea>
+    <br><button class="btn" style="width:100%" onclick="sendOrder()">Send Order on WhatsApp</button>
+  </div>
+</aside>
+
+<script>
+/* ======== EDIT THESE ======== */
+const WHATSAPP = "91XXXXXXXXXX";   // your number with country code, no + or spaces
+const LEAD_HOURS_CAKE = 36;        // minimum notice for cakes
+/* Menu: add/remove/edit items here. cat must match a category below. */
+const CATS = ["All","Cakes","Cupcakes","Pastries","Bakery","Healthy","Cold Coffee"];
+const MENU = [
+ {n:"Chocolate Truffle Cake",c:"Cakes",p:600,u:"/500g",d:"Rich dark chocolate sponge with silky ganache.",i:"🎂",cake:1,t:"Bestseller"},
+ {n:"Red Velvet Cake",c:"Cakes",p:700,u:"/500g",d:"Velvety red sponge layered with cream cheese frosting.",i:"🍰",cake:1},
+ {n:"Butterscotch Cake",c:"Cakes",p:550,u:"/500g",d:"Crunchy praline and smooth butterscotch cream.",i:"🎂",cake:1},
+ {n:"Custom Designer Cake",c:"Cakes",p:900,u:"/500g onwards",d:"Theme, photo or fondant cake made just for you. Extra charge for customisation.",i:"🎀",cake:1,t:"Custom"},
+ {n:"Photo Cake",c:"Cakes",p:850,u:"/500g onwards",d:"Send us your photo and we print it on your cake.",i:"📸",cake:1,t:"Custom"},
+ {n:"Vanilla Cupcake",c:"Cupcakes",p:60,u:"each",d:"Soft vanilla cupcake with swirled frosting.",i:"🧁"},
+ {n:"Chocolate Cupcake",c:"Cupcakes",p:70,u:"each",d:"Chocolatey cupcake topped with a cherry.",i:"🧁",t:"Fan Fave"},
+ {n:"Cupcake Box (6)",c:"Cupcakes",p:380,u:"box",d:"Assorted gift box, perfect for sharing.",i:"🎁"},
+ {n:"Chocolate Pastry",c:"Pastries",p:80,u:"each",d:"Moist chocolate pastry with cream and ganache.",i:"🍫"},
+ {n:"Black Forest Pastry",c:"Pastries",p:80,u:"each",d:"Classic cherry and cream layers.",i:"🍒"},
+ {n:"Choco Lava Cake",c:"Bakery",p:99,u:"each",d:"Warm cake with a gooey molten chocolate centre.",i:"🌋",t:"Must Try"},
+ {n:"Fudgy Brownie",c:"Bakery",p:70,u:"each",d:"Dense, fudgy and chocolatey.",i:"🍫"},
+ {n:"Choco Chip Cookies",c:"Bakery",p:180,u:"/200g",d:"Crisp edges, soft centres, loaded with chocolate chips.",i:"🍪"},
+ {n:"Atta Jaggery Cookies",c:"Healthy",p:200,u:"/200g",d:"Made with whole wheat atta and jaggery. No maida.",i:"🌾",t:"Healthy"},
+ {n:"Ghee Cookies",c:"Healthy",p:220,u:"/200g",d:"Melt-in-mouth cookies baked with pure ghee.",i:"🧈",t:"Healthy"},
+ {n:"Oats & Jaggery Cookies",c:"Healthy",p:210,u:"/200g",d:"Wholesome oats, jaggery and a hint of cinnamon.",i:"🥣",t:"Healthy"},
+ {n:"Whole Wheat Jaggery Cake",c:"Healthy",p:450,u:"/500g",d:"Maida-free cake sweetened with jaggery.",i:"🍰",cake:1,t:"Healthy"},
+ {n:"Classic Cold Coffee",c:"Cold Coffee",p:99,u:"glass",d:"Chilled, creamy and strong.",i:"🥤"},
+ {n:"Chocolate Cold Coffee",c:"Cold Coffee",p:119,u:"glass",d:"Cold coffee blended with chocolate and topped with cream.",i:"☕"}
+];
+/* ============================ */
+
+let cart={},cat="All";
+const $=id=>document.getElementById(id);
+const wa=(t)=>`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+
+function tabs(){$("tabs").innerHTML=CATS.map(c=>`<button class="tab ${c==cat?"on":""}" onclick="cat='${c}';tabs();grid()">${c}</button>`).join("")}
+function grid(){
+ $("grid").innerHTML=MENU.map((m,i)=>({m,i})).filter(o=>cat=="All"||o.m.c==cat).map(({m,i})=>`
+ <div class="card"><div class="pic">${m.t?`<span class="tag">${m.t}</span>`:""}<img src="assets/menu/${i}.jpg" alt="" onerror="this.remove()">${m.i}</div>
+ <div class="cb"><h3>${m.n}</h3><p>${m.d}</p><div class="row"><span class="price">₹${m.p} <small>${m.u}</small></span><button class="add" onclick="add(${i})">+ Add</button></div></div></div>`).join("")}
+function add(i){cart[i]=(cart[i]||0)+1;upd();const b=$("cc");b.style.transform="scale(1.4)";setTimeout(()=>b.style.transform="",200)}
+function chg(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];upd()}
+function total(){return Object.entries(cart).reduce((s,[i,q])=>s+MENU[i].p*q,0)}
+function upd(){
+ const ks=Object.keys(cart);$("cc").textContent=ks.reduce((s,k)=>s+cart[k],0);
+ $("items").innerHTML=ks.length?ks.map(i=>`<div class="it"><div><b>${MENU[i].n}</b><br><small>₹${MENU[i].p} ${MENU[i].u}</small></div><div class="qty"><button onclick="chg(${i},-1)">−</button><span>${cart[i]}</span><button onclick="chg(${i},1)">+</button></div></div>`).join(""):'<div class="empty">Your cart is empty 🧁<br>Add something sweet!</div>';
+ $("form").style.display=ks.length?"block":"none";$("total").textContent="₹"+total();setMin();
+}
+function pad(n){return String(n).padStart(2,"0")}
+function fmt(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`}
+function minDate(){const hasCake=Object.keys(cart).some(i=>MENU[i].cake);return new Date(Date.now()+(hasCake?LEAD_HOURS_CAKE:3)*3600000)}
+function setMin(){const d=minDate();$("fd").min=fmt(d);$("dmin").textContent=Object.keys(cart).some(i=>MENU[i].cake)?`Cakes need at least ${LEAD_HOURS_CAKE} hours notice.`:"Please allow at least 3 hours."}
+function openCart(){$("drawer").classList.add("on");$("ov").classList.add("on")}
+function closeCart(){$("drawer").classList.remove("on");$("ov").classList.remove("on")}
+function sendOrder(){
+ const n=$("fn").value.trim(),p=$("fp").value.trim(),d=$("fd").value,m=$("fm").value,a=$("fa").value.trim();
+ if(!n||!p||!d)return alert("Please fill your name, phone and date & time.");
+ if(!/^\d{10}$/.test(p.replace(/\D/g,"").slice(-10)))return alert("Please enter a valid 10-digit phone number.");
+ if(m.startsWith("Home")&&!a)return alert("Please add your delivery address.");
+ if(new Date(d)<minDate())return alert("Selected time is too early. "+$("dmin").textContent);
+ if(WHATSAPP.includes("X"))return alert("Owner: set your WhatsApp number in index.html (WHATSAPP).");
+ const lines=Object.entries(cart).map(([i,q])=>`• ${MENU[i].n} x${q} (₹${MENU[i].p*q})`).join("\n");
+ const msg=`Hello Bakescape! 🧁 I'd like to place an order.\n\n${lines}\n\nItems total: ₹${total()} (delivery/customisation extra)\n\nName: ${n}\nPhone: ${p}\nType: ${m}\nAddress: ${a||"-"}\nDate & time: ${new Date(d).toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"})}\nCake message / design: ${$("fc").value.trim()||"-"}`;
+ window.open(wa(msg),"_blank");
+}
+function links(){
+ const hi=wa("Hello Bakescape! I'd like to know more.");
+ $("waFloat").href=hi;$("footWa").href=hi;
+ $("bulkBtn").href=wa("Hello Bakescape! I'm interested in a bulk / corporate / hotel / school order. Please share details.");
+ $("yr").textContent=new Date().getFullYear();
+}
+tabs();grid();upd();links();
+</script>
+</body>
+</html>
